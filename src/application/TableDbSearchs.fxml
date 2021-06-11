@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TableDbSearchsController">
+   <children>
+      <SplitPane dividerPositions="0.4321608040201005" layoutX="157.0" layoutY="76.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextField fx:id="txt_search" layoutX="14.0" layoutY="14.0" onAction="#txt_searchClicked" onKeyPressed="#txt_searchKeyPress" prefHeight="25.0" prefWidth="368.0" promptText="Aranacak metin veya kullanıcı" />
+                  <ComboBox fx:id="combo_user" layoutX="87.0" layoutY="50.0" prefWidth="150.0" />
+                  <Label layoutX="14.0" layoutY="54.0" text="Kullanıcı" />
+                  <DatePicker fx:id="inception_date" layoutX="88.0" layoutY="92.0" prefHeight="25.0" prefWidth="150.0" />
+                  <DatePicker fx:id="due_date" layoutX="88.0" layoutY="130.0" prefHeight="25.0" prefWidth="150.0" />
+                  <Label layoutX="14.0" layoutY="96.0" text="Başlangıç" />
+                  <Label layoutX="14.0" layoutY="134.0" text="Bitiş" />
+                  <Button fx:id="btn_question" layoutX="296.0" layoutY="92.0" mnemonicParsing="false" onAction="#btn_questionClicked" text="Sorgula" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="tableView" layoutX="63.0" layoutY="12.0" prefHeight="223.0" prefWidth="348.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="col_id" prefWidth="27.0" text="Id" />
+                      <TableColumn fx:id="col_User" prefWidth="101.0" text="Kullanıcı Adı" />
+                        <TableColumn fx:id="col_Description" prefWidth="135.0" text="Açıklama" />
+                        <TableColumn fx:id="col_bill" prefWidth="47.0" text="Tutar" />
+                        <TableColumn fx:id="col_date" prefWidth="87.0" text="Tarih" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
